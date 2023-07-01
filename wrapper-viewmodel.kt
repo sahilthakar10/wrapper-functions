@@ -7,7 +7,7 @@ inline fun <reified T: ViewModel> Fragment.viewModel(noinline creator: (() -> T)
     return if (creator == null) {
         ViewModelProvider(this)[T::class.java]
     }else {
-        ViewModelProvider(this, com.woovly.bucketlist.BaseViewModelFactory(creator))[T::class.java]
+        ViewModelProvider(this, BaseViewModelFactory(creator))[T::class.java]
     }
 
 }
